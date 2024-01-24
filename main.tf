@@ -12,7 +12,7 @@ resource "aws_instance" "k8s_master" {
     type     = "ssh"
     user     = "ubuntu"
     password = file("k8s")
-    host     = self.public.ip
+    host     = self.public_ip
   }
 
   provisioner "file" {
