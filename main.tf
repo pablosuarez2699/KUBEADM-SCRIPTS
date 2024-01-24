@@ -26,7 +26,7 @@ resource "aws_instance" "k8s_master" {
     ]
   }
   provisioner "local-exec" {
-    command = "ansible-playbook -i '${self_public_ip},' playbook.yml"
+    command = "ansible-playbook -i '${self.public_ip},' playbook.yml"
   }
 }
 # Launch worker Node
